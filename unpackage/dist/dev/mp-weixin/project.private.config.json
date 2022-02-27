@@ -1,0 +1,108 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": 0,
+          "name": "zixun1",
+          "pathName": "pages/more/more",
+          "query": ""
+        },
+        {
+          "id": 1,
+          "name": "pages/news/news",
+          "pathName": "pages/news/news",
+          "query": ""
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/selectChar/selectChar",
+          "pathName": "pages/selectChar/selectChar",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/submitChar/submitChar",
+          "pathName": "pages/submitChar/submitChar",
+          "query": "index=0",
+          "scene": null
+        },
+        {
+          "name": "pages/admire/admire",
+          "pathName": "pages/admire/admire",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/eachadmire/eachadmire",
+          "pathName": "pages/eachadmire/eachadmire",
+          "query": "index=1",
+          "scene": null
+        },
+        {
+          "name": "pages/shop/shop",
+          "pathName": "pages/shop/shop",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/more/more",
+          "pathName": "pages/more/more",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/analysis/analysis",
+          "pathName": "pages/analysis/analysis",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的收藏",
+          "pathName": "pages/mylike/mylike",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "字帖生成",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "字体生成",
+          "pathName": "pages/generate/generate",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "用户分析",
+          "pathName": "pages/myanalysis/myanalysis",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "全部字帖",
+          "pathName": "pages/selectChar/selectChar",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

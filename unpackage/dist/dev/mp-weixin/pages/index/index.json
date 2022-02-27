@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#f1f2f6",
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "uni-swiper-dot": "/uni_modules/uni-swiper-dot/components/uni-swiper-dot/uni-swiper-dot"
+  }
+}

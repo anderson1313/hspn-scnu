@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "上传文字",
+  "enablePullDownRefresh": false,
+  "navigationStyle": "custom",
+  "backgroundColor": "#f1f3f6",
+  "usingComponents": {}
+}

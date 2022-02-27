@@ -1,0 +1,42 @@
+
+.imageBox{
+	width:100%;
+	height:450rpx;
+}
+.image{
+	width:100%;
+	height:450rpx;
+}
+.introductionBox{
+	width:84%;
+	margin-left:7%;
+	margin-top: 35rpx;
+}
+.titleBox{
+	width:100%;
+	height:35rpx;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-bottom: 5rpx;
+}
+.titleIcon{
+	width:50rpx;
+	height:40rpx;
+	margin-right: 15rpx;
+}
+.title{
+	font-size: medium;
+	/*#002f81*/
+	color:#291686
+}
+.textBox{
+	width:100%;
+	height:100rpx;
+	margin-top: 15rpx;
+}
+.introduction{
+	font-size: small;
+	font-weight: 400;
+}
+
