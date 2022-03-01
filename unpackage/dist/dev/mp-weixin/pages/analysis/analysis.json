@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "书写评价",
-  "enablePullDownRefresh": false,
-  "navigationStyle": "custom",
-  "usingComponents": {
-    "c-circle": "/components/cCircle"
-  }
-}

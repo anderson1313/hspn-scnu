@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "书法资讯",
-  "enablePullDownRefresh": false,
-  "navigationBarBackgroundColor": "#FFFFFF",
-  "usingComponents": {
-    "uni-swiper-dot": "/uni_modules/uni-swiper-dot/components/uni-swiper-dot/uni-swiper-dot"
-  }
-}
