@@ -1,0 +1,272 @@
+<template>
+	<view class='container'>
+
+		<view class="up">
+			<view class="title">人气书法</view>
+			<view class="scroll">
+				<scroll-view class="scroll-view_H" scroll-x="true" @scroll="scroll" scroll-left="120">
+					<view class="scroll-view-item_H animated fadeInLeft " v-for="(item,index) in topshow" :key="index"
+						:data-id="item.id"
+						:style="{'background-image':'url('+item.pic_url+')' ,'background-size':'cover'}"
+						@click="toeachcalli">
+						<view class="text">{{item.title}}</view>
+					</view>
+				</scroll-view>
+			</view>
+		</view>
+
+		<view class="down">
+			<view class="eachrecommend animated fadeInRight" v-for="(item,index) in downshow"
+				v-if="index>=page_index*6 && index<(6*(page_index+1))" :data-id="item.id" :key="index" @click="toeachcalli">
+
+				<view class="picbox">
+					<image :src="item.pic_url"></image>
+				</view>
+				<view class="text">{{item.title}}</view>
+			</view>
+		</view>
+
+		<view class="pagebox">
+			<view class="btn iconfont icon-jiantou_yemian_xiangzuo_o" @click="forwardPage"></view>
+
+			<view>
+				第{{pageList[page_index]}}页
+			</view>
+			<view class="btn iconfont icon-jiantou_yemian_xiangyou_o" @click="backwardPage"></view>
+
+		</view>
+
+
+
+	</view>
+</template>
+
+<script>
+	import {
+		Api
+	} from '../../common/api.js'
+
+
+	const apiModel = new Api()
+	export default {
+
+		data() {
+			return {
+				scrollTop: 0,
+				old: {
+					scrollTop: 0
+				},
+				topshow:[],
+				downshow:[],
+				calligraphy: [],
+				downtotal: [],
+				pageList: [],
+				all_pageList: [],
+				page_index: 0,
+			}
+		},
+		methods: {
+			scroll: function(e) {
+				console.log(e)
+				this.old.scrollTop = e.detail.scrollTop
+			},
+			toeachcalli:function(e){
+				
+				var id=e.currentTarget.dataset.id
+				console.log(id)
+				uni.navigateTo({
+					url: "../eachadmire/eachadmire?index=" +id
+				})
+				console.log(id)
+			},
+			onLoad(e) {
+				uni.showLoading({
+					title: '加载中'
+				});
+				apiModel.getCalligraphy().then(res => {
+					var page = [];
+					var j = 1;
+					if (res.error_code != 0) {
+						console.log("数据获取失败")
+					} else {
+						/* res.data.sort(function() {
+							return (0.5 - Math.random());
+						}); */
+						this.calligraphy = res.data
+						console.log(this.calligraphy)
+						this.topshow = res.data.slice(0, 10)
+						this.downshow = res.data.slice(10, 264)
+						for (var i = 0; i < this.downshow.length; i += 6) {
+							page[j - 1] = j;
+							j += 1
+						}
+						if ((j - 1) * 6 < this.downshow.length) {
+							console.log("多加一页")
+							page[j - 1] = j
+						}
+						this.pageList = page;
+						this.all_pageList = page;
+					/* 	console.log(this.topshow)
+
+						console.log(this.pageList)
+						console.log(this.downshow) */
+						uni.hideLoading()
+					}
+				})
+
+			},
+			forwardPage: function(e) {
+				if (this.page_index == 0) {
+					uni.showToast({
+						title: '已经在第一页了',
+						icon: "none"
+					})
+					return
+				}
+				this.page_index = this.page_index - 1
+
+			},
+			backwardPage: function(e) {
+				if (this.page_index + 1 >= this.pageList.length) {
+					uni.showToast({
+						title: '已经在最一页了',
+						icon: "none"
+					})
+					return
+				}
+				this.page_index = this.page_index + 1
+			},
+			/* pageChange(e) {
+				this.page_index = e.detail.value
+				console.log(this.page_index)
+			} */
+
+		},
+
+
+	}
+</script>
+
+<style>
+	.container {
+		background: #f1f2f6;
+		padding-top: 60rpx;
+		height: 100vh;
+		width: 100%;
+	}
+
+	.up .title {
+		font-size: 50rpx;
+		padding-left: 60rpx;
+	}
+
+	.scroll-view_H {
+		height: 420rpx;
+		white-space: nowrap;
+		width: 90%;
+		margin: 60rpx 0;
+		padding: 0 20rpx;
+	}
+
+	.scroll-view-item_H {
+		display: inline-block;
+		width: 50%;
+		height: 400rpx;
+		border-radius: 20rpx;
+		text-align: center;
+		font-size: 30rpx;
+		margin: 0 25rpx;
+
+	}
+
+	.scroll-view-item_H .text {
+		margin-top: 280rpx;
+		color: white;
+		font-size: 35rpx;
+		white-space: pre;
+		word-wrap: break-word;
+		background: rgba(19, 15, 64, .8);
+		width: 100%;
+		height: 120rpx;
+		border-radius: 0 0 20rpx 20rpx;
+		font-weight: bold;
+		line-height: 120rpx;
+	}
+
+
+	.eachrecommend {
+		display: flex;
+		flex-direction: row;
+
+		align-items: center;
+		width: 320rpx;
+		height: 150rpx;
+		background: white;
+		margin: 20rpx 0;
+		border-radius: 20rpx;
+
+
+	}
+
+	.down {
+		overflow: hidden;
+		height: 570rpx;
+
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin: 0 auto;
+		padding: 0 40rpx;
+		padding-bottom: 100rpx;
+		background-color: #F1F2F6;
+
+
+	}
+
+	.eachrecommend .text {
+		color: #3d3d3d;
+		font-weight: bold;
+
+	}
+
+	.picbox {
+		position: relative;
+		width: 100rpx;
+		height: 100rpx;
+		margin: 0 25rpx;
+
+
+
+	}
+
+	.picbox image {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		border-radius: 5rpx;
+
+	}
+
+	.pagebox {
+		width: 100vw;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: fixed;
+		bottom: 0rpx;
+		background: #F1F2F6;
+		padding-bottom: env(safe-area-inset-bottom);
+
+
+	}
+
+	.pagebox .btn {
+		margin: 0 60rpx;
+		font-size: 80rpx;
+		font-weight: 500;
+		color: #0a3d62;
+	}
+</style>

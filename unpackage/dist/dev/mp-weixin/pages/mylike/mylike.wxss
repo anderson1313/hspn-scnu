@@ -1,0 +1,308 @@
+
+.notip {
+	width: 100%;
+	text-align: center;
+	margin: 90rpx 0;
+	color: rgba(127, 143, 166, .8);
+}
+.up {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #F1F2F6;
+}
+.avatar {
+	overflow: hidden;
+	display: block;
+	width: 70rpx;
+	height: 70rpx;
+	margin: 20rpx;
+	margin-top: 20rpx;
+	border-radius: 50%;
+	border: 2px solid #fff;
+	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+.avatar .profile {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+.stat {
+	margin: 25rpx 0;
+	padding: 20rpx 0;
+	width: 80%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+.stat>view {
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.like {
+	width: 15%;
+	margin: 0 30rpx;
+}
+.stat .icon {
+	margin: 0 15rpx;
+	font-size: 45rpx;
+	font-weight: 100;
+	color: #e7eaf5;
+}
+.stat>view .num {
+	font-weight: bold;
+	color: #273c75;
+}
+.stat>view .text {
+	font-size: 25rpx;
+	color: #7f8fa6;
+}
+.down {
+	width: 100%;
+	min-height: 1200rpx;
+	position: absolute;
+	top: 260rpx;
+	background: white;
+	border-radius: 30rpx 30rpx 0 0;
+}
+.isFixed {
+	position: fixed;
+	top: 0rpx;
+	left: 0;
+	width: 100%;
+	height: 80rpx;
+	margin: 0;
+}
+.middle {
+	height: 100rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	border-radius: 30rpx 30rpx 0 0;
+	z-index: 10;
+}
+.nav {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+.labelname {
+	margin: 0 40rpx;
+	color: rgba(127, 143, 166, .5);
+	position: relative;
+}
+.active {
+	color: #192a56;
+	font-weight: bold;
+	position: relative;
+}
+.active::after {
+	position: absolute;
+	bottom: -8rpx;
+	left: 0;
+	right: 0;
+	width: 64rpx;
+	height: 5rpx;
+	content: '';
+	border-radius: 30rpx;
+	background-color: rgba(25, 42, 86, 1.0);
+}
+.Fixed {
+	padding-top: 100rpx;
+}
+.content,
+.charcontainer,
+.callicontainer,
+.goodcontainer {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding-bottom: 100rpx;
+	width: 680rpx;
+	margin: 0 auto;
+}
+.char,
+.good{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 45%;
+	height: 200rpx;
+	margin: 20rpx 15rpx;
+	box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+	border-radius: 20rpx;
+}
+.calli {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 45%;
+	height: 200rpx;
+	margin: 20rpx 15rpx;
+	box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+	border-radius: 20rpx;
+}
+.char .chleft {
+	width: 60%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-right: 1px solid rgba(220, 221, 225, 1.0);
+}
+.calli .caup {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 20rpx;
+}
+.calli .caup>view {
+	margin: 0 30rpx;
+}
+.calli .cadown {
+	width: 65%;
+	text-align: left;
+	font-size: 25rpx;
+	color: rgba(52, 73, 94, .6);
+	overflow: hidden;
+}
+.char .chright {
+	width: 40%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.chleft .picbox,
+.caup .picbox {
+	z-index: 0;
+	width: 100rpx;
+	height: 100rpx;
+	position: relative;
+}
+.chleft .picbox image,
+.caup .picbox image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
+}
+.chright>view {
+	width: 40rpx;
+	height: 40rpx;
+	margin: 10rpx 0;
+}
+.chright .picbox {
+	z-index: 0;
+	width: 40rpx;
+	height: 40rpx;
+	position: relative;
+}
+.chright .picbox image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 50%;
+	left: 50%;
+	margin-left: -24rpx;
+	margin-top: -10rpx;
+	-webkit-transform-origin: center;
+	        transform-origin: center;
+}
+.caup .likebox {
+	z-index: 0;
+	width: 50rpx;
+	height: 50rpx;
+	position: relative;
+}
+.caup .likebox image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 50%;
+	left: 50%;
+	margin-left: -25rpx;
+	margin-top: -25rpx;
+	-webkit-transform-origin: center;
+	        transform-origin: center;
+}
+
+/*good*/
+.good{
+	margin: 20rpx auto;
+	width: 90%;
+	padding: 5rpx 20rpx;
+}
+.good .gleft{
+	width: 85%;
+	height: 90%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	border-right: 1px solid rgba(220, 221, 225, 1.0);
+}
+.good .gright{
+	width: 15%;
+	height: 90%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-left: 10rpx;
+}
+.good .gleft .picbox{
+	z-index: 0;
+	width: 150rpx;
+	height: 150rpx;
+	position: relative;
+}
+.good .gleft .picbox image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 50%;
+	left: 50%;
+	margin-left: -75rpx;
+	margin-top: -75rpx;
+	-webkit-transform-origin: center;
+	        transform-origin: center;
+}
+.good .gleft .name{
+	width: 350rpx;
+	font-size: 25rpx;
+	overflow: hidden;
+	margin: 0 20rpx;
+	color: rgba(116, 125, 140,.8);
+}
+.gright .likebox {
+	z-index: 0;
+	width: 50rpx;
+	height: 50rpx;
+	position: relative;
+}
+.gright .likebox image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 50%;
+	left: 50%;
+	margin-left: -25rpx;
+	margin-top: -25rpx;
+	-webkit-transform-origin: center;
+	        transform-origin: center;
+}
+
+

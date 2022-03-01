@@ -1,0 +1,70 @@
+
+.container{
+		padding: 60rpx 0;
+		background: #F1F2F6;
+		min-height: 2000rpx;
+}
+.eachrecord{
+		margin: 40rpx auto;
+		height: 250rpx;
+		width: 650rpx;
+		height: ;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		background: white;
+		border-radius: 10rpx;
+		overflow: hidden;
+		box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.eachrecord .picbox{
+		width: 120rpx;
+		height: 120rpx;
+		position: relative;
+}
+.eachrecord .picbox image{
+		
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		        transform: translate(-50%, -50%);
+}
+.eachrecord .comment{
+		height: 130rpx;
+		font-size: 25rpx;
+		width: 300rpx;
+		margin: 0 30rpx;
+	
+	
+	  text-overflow:ellipsis;
+	  display: -webkit-box;
+	
+	  word-break: break-all;
+	
+	  -webkit-box-orient: vertical;
+	
+	  -webkit-line-clamp: 4;
+	
+	  overflow: hidden;
+}
+.eachrecord .mark{
+		font-size: 35rpx;
+		font-weight: bold;
+		width: 80rpx;
+		height: 80rpx;
+		line-height: 80rpx;
+		text-align: center;
+	color: #d35400;
+	border:3px solid #002F81;
+	border-radius: 50rpx;
+}
+.nocon{
+	text-align: center;
+	color: #001F56;
+	margin: 50rpx 0;
+}
+

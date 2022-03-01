@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/more/more",
+    "pages/submitChar/submitChar",
+    "pages/admire/admire",
+    "pages/selectChar/selectChar",
+    "pages/analysis/analysis",
+    "pages/aboutUs/aboutUs",
+    "pages/news/news",
+    "pages/content/content",
+    "pages/eachadmire/eachadmire",
+    "pages/shop/shop",
+    "pages/goodsDetail/goodsDetail",
+    "pages/myanalysis/myanalysis",
+    "pages/mylike/mylike",
+    "pages/generate/generate",
+    "pages/ranking/ranking",
+    "pages/myorder/myorder"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F1F2F6",
+    "backgroundColor": "#F1F2F6"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "text": "资讯",
+        "pagePath": "pages/news/news",
+        "iconPath": "static/news.png",
+        "selectedIconPath": "static/newsSelected.png"
+      },
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconPath": "static/pen.png",
+        "selectedIconPath": "static/penSelected.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/more/more",
+        "iconPath": "static/moreUnselected.png",
+        "selectedIconPath": "static/more.png"
+      }
+    ],
+    "color": "#999999",
+    "selectedColor": "#2C3A47",
+    "borderStyle": "white"
+  },
+  "usingComponents": {}
+}
